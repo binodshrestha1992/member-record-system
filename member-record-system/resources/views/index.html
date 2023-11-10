@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Navigation Menu -->
+        <header id="header">
+            <nav class="nav" id="nav">
+                <a href="" class="logo">Member Record System</a>
+                <div id="hamBurger" class="toggle-bar" onclick="onClickHamBurger()">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class='nav-lists' id="navlist">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Binod Shrestha</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Container Section -->
+
+        <div class="content">
+            <div class="content-title">
+                <h2>Participants List</h2>
+            </div>
+            <div class='content-table'>
+                <h5><a href="/user/create">Add User</a></h5>
+                <div class='scroll-table'>
+                    <table>
+                        <tr>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Professional Summary</th>
+                            <th>Action</th>
+                        </tr>
+                        @foreach($participants as $p)
+                        <tr>
+                            <td>{{$p->first_name}}</td>
+                            <td>{{$p->last_name}}</td>
+                            <td>{{$p->age}}</td>
+                            <td>{{$p->address}}</td>
+                            <td>{{$p->phone}}</td>
+                            <td>{{$p->email}}</td>
+                            <td>{{$p->professional_summary}}</td>
+                            <td>
+                                <a href="{{$p->id}}/edit">Edit</a>
+                                <a href="{{$p->id}}/delete">Delete</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section -->
+        <footer>Copyright by Member Login System</footer>
+    </div>
+    <!-- Javascript Section -->
+    <script>
+
+        function onClickHamBurger() {
+            var hamBurger = document.getElementById('hamBurger');
+
+            var navlist = document.getElementById('navlist');
+            if (navlist.style.transform == 'translateX(0%)') {
+                navlist.style.transform = 'translateX(-200%)';
+            } else {
+                navlist.style.transform = 'translateX(0%)';
+
+            }
+        }
+    </script>
+</body>
+
+</html>

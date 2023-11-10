@@ -1,0 +1,312 @@
+/*  */
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    margin:0px;
+    padding:0px;
+}
+:root{
+    --primary-color: darkcyan;
+    --light-color: #ffffff;
+    --secondary-color: lightgray;
+}
+
+header{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    margin:0;
+    padding:0;
+    position: relative;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style:none;
+}
+.logo{
+    color: var(--light-color);
+    font-size:1rem;
+    display: block;
+    padding:1rem;
+    margin:0;
+}
+.toggle-bar{
+    margin:0.5rem 0;
+    padding:0;
+}
+.nav{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-row-gap:1rem;
+}
+.nav-list{
+    margin:0;
+    padding:0;
+}
+.nav-list > .nav-item{
+    margin:0;
+    padding:0;
+}
+.nav-list > .nav-item > a, .logout{
+    color: var(--light-color);
+    padding:1rem;
+    margin:0rem;
+    display: block;
+}
+.logout{
+    background-color: var(--primary-color);
+    border:none;
+    width:100%;
+    cursor: pointer;
+    font-size: 1rem;
+    
+}
+.nav-item > a:hover{
+    background-color: var(--light-color);
+    color:var(--primary-color);
+} 
+.nav-lists{
+    position:absolute;
+    top:100%;
+    transform: translateX(-200%);
+    background-color: var(--primary-color);
+    width: 100%;
+    transition: 0.2s ease-in-out;
+}
+.content{
+    min-height: 90vh;
+    margin:0;
+    padding:0;
+}
+.content-title{
+    text-align: center;
+    margin: 1rem 0;
+    color:var(--primary-color);
+    padding: 1rem;
+    border-bottom: 1px dotted var(--primary-color);
+}
+.add_crud{
+    text-align: center;
+    font-size: 1rem;
+    margin:1rem 0;
+    padding:0;
+}
+.add_crud > a{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    width: 4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border:none;
+}
+.scroll-table{
+    overflow-x: scroll;
+    padding: 1rem;
+    text-align: center;
+}
+table, td{
+    border:1px solid var(--primary-color);
+}
+table{
+    border-collapse: collapse;
+    color: var(--primary-color);
+    width: 100%;
+}
+th, td{
+    padding: 0.5rem 1rem;
+}
+th{
+    background-color: var(--primary-color);
+    color:var(--light-color);
+    border: 1px solid var(--light-color);
+}
+footer{
+    background-color: var(--primary-color);
+    color:var(--light-color);
+    text-align: center;
+    padding:1rem;
+    margin:0px;
+}
+
+
+/* Create Form */
+.create_user{
+    margin: 0;
+    border-bottom: 1px dotted var(--primary-color);
+    text-align: center;
+    color: var(--primary-color);
+    padding: 1rem;
+}
+
+.add_user{
+padding:1rem;
+margin:0 auto;
+display: grid;
+grid-template-columns: 1fr;
+}
+.add_user > input, .add_user > textarea{
+    width:100%;
+    padding: 0.5rem 1rem;
+    margin: 0.8rem 0;
+}
+.add_user > input{
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+}
+textarea{
+    resize: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.8rem;
+}
+.add_user > input[type=submit]{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 0.5rem;
+}
+.right-content{
+    display: none;
+}
+/* Login Page */
+
+
+.login-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primary-color);
+}
+.left-container{
+    display: none;
+}
+.right-container > h2{
+    text-align: center;
+}
+.login-form{
+    background-color: var(--light-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding:1rem;
+    color:var(--primary-color);
+}
+.login-form > input{
+    padding: 0.5rem 1rem;
+    border:none;
+    margin: 1rem 0;
+    border-bottom: 1px solid var(--primary-color);
+}
+.login-form > input:focus{
+    border:none;
+}
+.login-form > input[type=submit]{
+background-color: var(--primary-color);
+color: var(--light-color);
+margin: 1rem 0;
+}
+.login-form > a{
+    color:var(--primary-color);
+}
+
+
+/* update user */
+.right-update-content, .left-update-content{
+    display: none;
+}
+
+
+
+/* About */
+.about-container{
+    margin:0;
+    padding: 1rem 2rem;
+}
+.page_title{
+    color: var(--primary-color);
+    margin: 1rem 0;
+    text-align: center;
+}
+.about-content{
+    text-align: justify;
+    color: var(--primary-color);
+}
+.about-content > h5{
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+.about-content > p{
+    line-height: 1.5rem;
+}
+@media screen and (min-width: 769px) {
+
+/* Nav Container */
+.nav{
+    grid-template-columns: 16rem 1fr;
+}
+.toggle-bar{
+    display: none;
+}
+.nav-lists{
+    position: relative;
+    top:0%;
+    transform: translateX(0%);
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.nav-list > .nav-item{
+    display: inline-block;
+}
+
+    /* login */
+    .left-container{
+        display: block;
+    }
+    .left-container > img{
+        object-fit: cover;
+        width:100%;
+        height:100vh;
+    }
+    .login-container{
+        display: grid;
+        grid-template-columns: 1fr 20rem;
+        align-items: center;
+    }
+
+
+    /* Create user */
+    .main-content{
+        display: grid;
+        grid-template-columns: 20rem 1fr;
+        align-items: center;
+    }
+    .right-content > img{
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+    }
+    .right-content{
+        display: block;
+    }
+
+    /* Update User */
+    .main-update-content{
+        display: grid;
+        grid-template-columns: 12rem 20rem 1fr;
+        align-items: center;
+    }
+    .right-update-content > img, .left-update-content > img{
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+    }
+    .right-update-content, .left-update-content{
+        display: block;
+    }
+    /* About */
+}
+

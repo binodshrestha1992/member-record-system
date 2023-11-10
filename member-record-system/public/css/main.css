@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: darkcyan;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: cadetblue;
+}
+.login-form, .add_user{
+    background-color: aliceblue;
+    margin:0;
+    padding: 4rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
+    min-width:25rem;
+}
+input{
+    padding: 0.8rem 0.5rem;
+}
+input[type=submit]{
+    background-color: cadetblue;
+    color:#ffffff;
+    cursor: pointer;
+    padding: 0.8rem 0.5rem;
+    margin-top: 0.5rem;
+}
+
+
+
+/* Navbar */ 
+.nav{
+    display:grid;
+    grid-template-columns: 12rem 1fr;
+    background-color: var(--primary-color);
+}
+#navlist{
+    display:flex;
+    justify-content: space-between;
+    margin-left:12rem;
+}
+.nav-list{
+    list-style: none;
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+.toggle-bar{
+    display: none;
+}
+.nav-list:last-child{
+    text-align: right;
+}
+.nav-item{
+    display: inline-block;
+    margin:0;
+    padding:0;
+}
+a{
+    padding:1rem;
+    margin:0;
+    text-decoration: none;
+    display: block;
+}
+
+.main-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+footer{
+    padding:1rem;
+    background-color: var(--primary-color);
+}
+.content{
+    margin:0;
+    padding: 2rem;
+}
+.content-title{
+    margin: 2rem 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.content-table > h5 > a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media screen and (max-width:768px){
+    header{
+        position: relative;;
+    }
+    .nav{
+        grid-template-columns: 1fr;
+        text-align: center;
+        z-index: 2;
+    }
+    .nav-list:last-child{
+        text-align: center;
+    }
+    .nav-item{
+        display: block;
+    }
+    .nav-lists{
+        position:absolute;
+        top: 100%;
+        z-index: 1;
+        width:100%;
+        background-color: var(--primary-color);
+        transform: translateX(-200%);
+        transition: 0.2s ease-in-out;
+    }
+    #navlist{
+       flex-direction: column;
+       margin:0;
+       z-index: 100;
+    }
+    .toggle-bar{
+        display: block;
+    }
+    .scroll-table{
+        width: 80%;
+        margin:0 auto;
+        overflow-x: scroll;
+    }
+    table{
+        padding: 1rem;
+        border-collapse: collapse;
+    }
+    table, td,th{
+        border: 1px solid var(--primary-color);
+        padding: 1rem;
+    }
+    th{
+        background-color: rgb(20, 116, 116);
+    }
+}
